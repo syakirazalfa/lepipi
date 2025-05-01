@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="toggleDarkMode" class="toggle-dark">🌙 Dark Mode</button>
+    <div class="container">
+        <h1 data-testid="appTitle">📚 Bookshelf App 📖</h1>
+
+        <form id="bookForm" data-testid="bookForm">
+            <input type="text" id="title" placeholder="Judul Buku" required data-testid="bookFormTitleInput">
+            <input type="text" id="author" placeholder="Penulis" required data-testid="bookFormAuthorInput">
+            <input type="number" id="year" placeholder="Tahun" required data-testid="bookFormYearInput">
+            <label>
+                <input type="checkbox" id="isComplete" data-testid="bookFormIsCompleteCheckbox">
+                <span>Selesai dibaca</span>
+            </label>
+            <button type="submit" data-testid="bookFormSubmitButton">Tambah Buku</button>
+        </form>
+
+        <form id="searchForm" data-testid="searchBookForm">
+            <input type="text" id="searchInput" placeholder="Cari buku..." data-testid="searchBookFormTitleInput">
+            <button type="submit" data-testid="searchBookFormSubmitButton">Cari</button>
+        </form>
+
+        <div class="bookshelves-container">
+            <div class="bookshelf" data-testid="incompleteBookshelf">
+                <h2>Belum Selesai Dibaca</h2>
+                <div id="incompleteBookshelf" data-testid="incompleteBookList"></div>
+            </div>
+            <div class="bookshelf" data-testid="completeBookshelf">
+                <h2>Selesai Dibaca</h2>
+                <div id="completeBookshelf" data-testid="completeBookList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
